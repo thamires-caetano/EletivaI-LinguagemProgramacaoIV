@@ -22,12 +22,30 @@
       echo "Subtração: ".($valor1 - $valor2);
       echo "Multiplicação: ".($valor1 * $valor2);
       if ($valor2 != 0){
-         echo "Divisão: "($valor1 / $valor2);
+         echo "Divisão: ".($valor1 / $valor2);
       } else {
         echo "Não é possível realizar divisão por 0!";
       }
       if ($valor1 % 2 == 0)
         echo "Valor 1 é par!";
+      else 
+        echo "Valor é impar1";
+
+      $resultado = $valor1 % 2 == 0 ? "Valor 1 é par!" 
+                  : "Valor 1 é impar";
+      echo $resultado;
+
+      $i = 10;
+
+      echo "<br/>";
+
+      echo "Valor de i:".(3 * ++$i);
+      
+      echo "<br/>";
+
+      echo "Valor de i:".($i);
+
+
     ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
