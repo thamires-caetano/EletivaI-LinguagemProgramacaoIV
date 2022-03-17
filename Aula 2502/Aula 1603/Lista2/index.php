@@ -15,15 +15,18 @@
     <form action="resultado.php" method="post">
       <div class="row">
         <?php
-
+          for ($i=1; $i<=10; $i++){
         ?>
           <div class="col">
-            <label for="valor1" class="label-control">
-              Informe o valor 1
+            <label for="valor<?= $i ?>" class="label-control">
+              Informe o valor <?= $i ?>
             </label>
-            <input type="number" name="valor1" id="valor1"
-                class="form-control"/>
+            <input type="number" name="valor<?= $i ?>" 
+              id="valor<?= $i ?>" class="form-control"/>
           </div>
+        <?php
+          }
+        ?>
       </div>
       <div class="row">
         <div class="col">
