@@ -8,10 +8,39 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Sistema em PHP</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Sistema em PHP</h1>
+
+    <?php
+        if ($_POST){
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
+            /*setcookie("usuario", $email, time() + (86400 * 1), "/");
+            echo "Seja bem vindo".$_COOKIE['usuario'];*/
+
+            session_start();
+            if (($email == "v@v.com") && ($senha == "123")){
+                $_SESSION['usuario'] = $email;
+                $_SESSION['acesso'] = true;
+                echo "Bem vindo usuário ".$_SESSION['usuario'];
+                echo '<a href="sair.php">Sair</a>';
+            } else {
+                header('Location: index.php');
+                exit;
+            }
+        } else {
+            session_start();
+            if ($_SESSION['acesso'] ==  true){
+                echo "Seja bem vindo usuário ".$_SESSION['usuario'];
+                echo '<a href="sair.php">Sair</a>';
+            } else{
+                header('Location: index.php');
+                exit;
+            }
+        }
+    ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
