@@ -37,29 +37,24 @@
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                <?php while($linha = $resultado->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <tr>
+                        <th scope="row"><?= $linha ['id'] ?> </th>
+                        <td><?= $linha ['nome'] ?></td>
+                        <td><?= $linha ['email'] ?></td>
+                        <td> <a href="/cliente/alterar/<?= $linha['id'] ?>"
+                                class="btn btn-warning">Alterar</a>
+                             <a href="/cliente/excluir/<?= $linha['id'] ?>"
+                                class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
             </table>
 
