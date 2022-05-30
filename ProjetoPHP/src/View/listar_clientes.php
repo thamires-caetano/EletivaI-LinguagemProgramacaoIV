@@ -29,9 +29,7 @@
                         </div>';
                 }
             }
-        ?>
-        
-        
+        ?> 
 
         <table class="table table-hover">
             <thead>
@@ -43,6 +41,7 @@
                 </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
                 <?php while($linha = $resultado->fetch(PDO::FETCH_ASSOC)) { ?>
                     <tr>
                         <th scope="row"><?= $linha ['id'] ?> </th>
@@ -50,6 +49,15 @@
                         <td><?= $linha ['email'] ?></td>
                         <td> <a href="/cliente/alterar/<?= $linha['id'] ?>"
                                 class="btn btn-warning">Alterar</a>
+=======
+                <?php while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){ ?>
+                    <tr>
+                        <th scope="row"><?= $linha['id'] ?></th>
+                        <td><?= $linha['nome'] ?></td>
+                        <td><?= $linha['email'] ?></td>
+                        <td> <a href="/cliente/alterar/<?= $linha['id'] ?>"
+                                class="btn btn-warning">Alterar</a> 
+>>>>>>> eed1dd183b8eef8d90fc8bee28c59ed4f6d4922e
                              <a href="/cliente/excluir/<?= $linha['id'] ?>"
                                 class="btn btn-danger">Excluir</a>
                         </td>

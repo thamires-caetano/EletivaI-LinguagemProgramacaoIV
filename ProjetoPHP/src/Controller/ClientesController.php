@@ -7,6 +7,8 @@ use Aluno\ProjetoPhp\Model\Entity\Clientes;
 
 class ClientesController{
 
+    //private ClientesDAO $dao;
+
     public static function abrirFormularioInserir(){
         require_once "../src/View/inserir_cliente.php";
     }
@@ -35,6 +37,34 @@ class ClientesController{
             $resposta = false;
         }
         ClientesController::abrirListaClientes();
+<<<<<<< HEAD
+=======
+    }
+
+    public static function editarCliente($params){
+        $cliente = new Clientes();
+        $cliente->setEmail($_POST['email']);
+        $cliente->setIdade($_POST['idade']);
+        $cliente->setNome($_POST['nome']);
+        $cliente->setId($params[1]);
+        $dao = new ClientesDAO();
+        if ($dao->alterar($cliente)){
+            $resposta = true;
+        } else {
+            $resposta = false;
+        }
+        ClientesController::abrirListaClientes();
+    }
+
+    public static function excluirCliente($params){
+        $dao = new ClientesDAO();
+        if ($dao->excluir($params[1])){
+            $resposta = true;
+        } else {
+            $resposta = false;
+        }
+        ClientesController::abrirListaClientes();
+>>>>>>> eed1dd183b8eef8d90fc8bee28c59ed4f6d4922e
     }
 
     public static function editarCliente($params){

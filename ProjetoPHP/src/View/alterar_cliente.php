@@ -22,21 +22,33 @@
                         Informe o nome:
                     </label>
                     <input type="text" class="form-control"
+<<<<<<< HEAD
                             name="nome" id="nome" value="<?= $resultado['nome'] ?>"/>
+=======
+                    name="nome" id="nome" value="<?= $resultado['nome'] ?>"/>
+>>>>>>> eed1dd183b8eef8d90fc8bee28c59ed4f6d4922e
                 </div>
                 <div class="col-5">
                     <label for="email" class="label-control">
                         Informe o email:
                     </label>
                     <input type="text" class="form-control"
+<<<<<<< HEAD
                             name="email" id="email" value="<?= $resultado['email'] ?> "/>
+=======
+                    name="email" id="email" value="<?= $resultado['email'] ?>"/>
+>>>>>>> eed1dd183b8eef8d90fc8bee28c59ed4f6d4922e
                 </div>
                 <div class="col-2">
                     <label for="idade" class="label-control">
                         Informe a idade:
                     </label>
                     <input type="number" class="form-control"
+<<<<<<< HEAD
                             name="idade" id="idade"/>
+=======
+                            name="idade" id="idade" value="<?= $resultado['idade'] ?>"/>
+>>>>>>> eed1dd183b8eef8d90fc8bee28c59ed4f6d4922e
                 </div>
             </div>
             <div class="row">
